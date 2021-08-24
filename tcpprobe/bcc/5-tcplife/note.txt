@@ -1,0 +1,63 @@
+
+>> accept socket
+
+---- client close
+
+b'          <idle>-0       [001] ..s. 23445.358871: 0: 00000000bdb1befb - 1 - 0'                           │fsd
+b'          <idle>-0       [001] .Ns. 23445.359016: 0: esta'                                               │f
+b'          <idle>-0       [001] ..s. 23447.765101: 0: 00000000bdb1befb - 8 - 0'                           │Connection received on 192.168.137.1 31480
+b'          <idle>-0       [001] .Ns. 23447.767014: 0: close wait'                                         │asdfksdklfskldf
+b'              nc-5099    [002] .... 23447.768880: 0: 00000000bdb1befb - 9 - 5099'                        │
+b'              nc-5099    [002] .... 23447.769193: 0: last-ack'                                           │asdfsdf
+b'    kworker/u8:2-5989    [001] ..s. 23447.769798: 0: 00000000bdb1befb - 7 - 5989'                        │asdf
+b'    kworker/u8:2-5989    [001] ..s. 23447.769977: 0: close'
+
+
+----- server close
+
+
+
+
+>> connect socket
+
+====== FAILED
+
+--- self close
+
+b'              nc-5995    [000] .... 22549.843236: 0: 000000004d69bce2 - 2 - 5995'                        │vagrant@bpf-dev:/vagrant2$
+b'              nc-5995    [000] .... 22549.843425: 0: syn_sent'                                           │vagrant@bpf-dev:/vagrant2$ nc 192.168.137.1 9999
+b'              nc-5995    [000] .... 22627.097008: 0: 000000004d69bce2 - 7 - 5995'                        │^C
+b'              nc-5995    [000] .N.. 22627.097273: 0: close'
+
+====== SUCCESSED
+
+------ server close
+
+
+b'           <...>-6004    [000] .... 22765.786610: 0: 000000004d69bce2 - 2 - 6004'                        │Connection received on 127.0.0.1 52704
+b'           <...>-6004    [000] .... 22765.786807: 0: syn_sent'                                           │Connection received on 127.0.0.1 52706
+b'          <idle>-0       [001] .Ns. 22765.787274: 0: 000000004d69bce2 - 1 - 0'                           │Connection received on 192.168.137.1 14902
+b'          <idle>-0       [001] .Ns. 22765.787453: 0: esta'                                               │Connection received on 192.168.137.1 14903
+b'          <idle>-0       [001] .Ns. 22770.200538: 0: 000000004d69bce2 - 8 - 0'                           │adfasdf
+b'          <idle>-0       [001] .Ns. 22770.201609: 0: close wait'                                         │Connection received on 127.0.0.1 52708
+......
+b'          <idle>-0       [001] ..s. 22774.256532: 0: 000000004d69bce2 - 7 - 0'                           │asdfal;sdkfjaklsdf
+b'          <idle>-0       [001] ..s. 22774.256938: 0: close'
+
+
+
+--------- self close
+
+
+b'           <...>-6015    [002] .... 22843.862070: 0: 0000000009a44785 - 2 - 6015'                        │Connection received on 127.0.0.1 52704
+b'           <...>-6015    [002] .... 22843.862258: 0: syn_sent'                                           │Connection received on 127.0.0.1 52706
+b'         python3-6014    [001] ..s. 22843.862562: 0: 0000000009a44785 - 1 - 6014'                        │Connection received on 192.168.137.1 14902
+b'         python3-6014    [001] ..s. 22843.862698: 0: esta'                                               │Connection received on 192.168.137.1 14903
+b'              nc-6015    [002] .... 22845.035165: 0: 0000000009a44785 - 4 - 6015'                        │adfasdf
+TCP_FIN_WAIT1
+
+b'          <idle>-0       [001] .Ns. 22845.036010: 0: 0000000009a44785 - 5 - 0'                           │Connection received on 127.0.0.1 52708
+TCP_FIN_WAIT2
+
+b'          <idle>-0       [001] .Ns. 22845.036155: 0: 0000000009a44785 - 7 - 0'                           │asdfal;sdkfjaklsdf
+b'          <idle>-0       [001] .Ns. 22845.036156: 0: close'
