@@ -22,3 +22,7 @@ vagrant@bpf-dev:/vagrant2/dnsmon$ cat /proc/kallsyms  | grep sys_mount
 0000000000000000 T compat_sys_mount
 ```
 - better use `tracepoint` for general approach
+
+- Where are tracepoints => `sudo ls /sys/kernel/debug/tracing/events`
+
+https://blogs.oracle.com/linux/post/taming-tracepoints-in-the-linux-kernel
