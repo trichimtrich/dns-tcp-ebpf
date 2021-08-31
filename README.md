@@ -10,7 +10,7 @@ Ubuntu 20.04
 
 ```bash
 wget https://golang.org/dl/go1.17.linux-amd64.tar.gz
-tar xvf https://golang.org/dl/go1.17.linux-amd64.tar.gz
+tar xvf go1.17.linux-amd64.tar.gz
 sudo mv go /usr/lib/go-1.17
 sudo ln -s /usr/lib/go-1.17/bin/go /usr/bin/go
 echo 'export GOPATH=~/go' >> ~/.profile
